@@ -1,5 +1,4 @@
-FileName: /Guia_IUB-1/package.json
-FileContents: {
+{
   "name": "mi-proyecto",
   "version": "1.0.0",
   "description": "Proyecto de gestión de roles con Firebase y Netlify",
