@@ -1,17 +1,15 @@
 /* Base Styles */
 body {
   margin: 0;
-<<<<<<< HEAD
   font-family: 'Inter', Arial, sans-serif; /* Usar Inter como fuente principal */
   background-color: #f8f9fa; /* Fondo general muy claro */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   color: #333333; /* Color de texto general */
-=======
+
   padding: 0;
   min-height: 100vh;
->>>>>>> 7d6bf90a64d481bdda9a3a9c5b84a65587fedb85
 }
 
 /* Header (Navbar) Styles */
@@ -577,9 +575,8 @@ body {
   background-color: #28a745; /* Verde */
   color: white;
 }
-=======
+
   bottom: 0;
   left: 0;
   margin-top: auto;
 }
->>>>>>> 7d6bf90a64d481bdda9a3a9c5b84a65587fedb85
