@@ -56,6 +56,9 @@
             <li>
               <a class="dropdown-item logout-link" href="/login/login.html"><i class="fa-solid fa-right-from-bracket me-2"></i>Cerrar sesión</a>
             </li>
+            <!-- Nuevos enlaces de navegación de usuario -->
+            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user-cog me-2"></i>Mi Perfil</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-calendar-check me-2"></i>Mis Reservas</a></li>
           </ul>
         </div>
       </div>
@@ -130,45 +133,49 @@
           </div>
           <div class="modal-body" id="roomDetailsModalBody">
             <!-- Contenido del salón se cargará aquí -->
+            <div class="room-info-container">
+                <div class="room-header">
+                    <h6>Detalles:</h6>
+                    <div class="status-badge available">Disponible</div>
+                </div>
+                <ul id="room-details-list">
+                    <!-- Detalles del salón (ubicación, tipo, capacidad) se cargarán aquí -->
+                </ul>
+                
+                <!-- Sección de Disponibilidad y Reserva -->
+                <div class="reservation-section">
+                    <h6 class="section-title">Disponibilidad</h6>
+                    <div class="availability-calendar" id="availability-calendar">
+                        <!-- Calendario de disponibilidad se cargará dinámicamente con JS -->
+                        <p class="text-muted">Cargando disponibilidad...</p>
+                    </div>
+                    
+                    <div class="reservation-form hidden">
+                        <h6 class="section-title">Reservar este espacio</h6>
+                        <div class="form-group mb-3">
+                            <label for="reservation-datetime" class="form-label">Fecha y hora:</label>
+                            <input type="datetime-local" id="reservation-datetime" class="form-control">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="reservation-duration" class="form-label">Duración (horas):</label>
+                            <select id="reservation-duration" class="form-select">
+                                <option value="1">1 hora</option>
+                                <option value="2">2 horas</option>
+                                <option value="3">3 horas</option>
+                                <option value="4">4 horas</option>
+                            </select>
+                        </div>
+                        <button id="confirm-reservation-btn" class="btn btn-success w-100">
+                            Confirmar Reserva
+                        </button>
+                        <p id="reservation-message" class="mt-2 text-center"></p>
+                    </div>
+                </div>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             <button type="button" class="btn btn-primary" id="reserve-room-btn">Reservar Salón</button>
-          </div>
-    <div class="container my-4">
-      <h1 class="text-center mb-3">MAPAS</h1>
-      <div class="row g-3">
-        <div class="col-12 col-md-6 col-lg-6">
-          <div class="card sede-card">
-            <img src="../assets/imagenes/sede-soledad.jpg" class="card-img-top" alt="Sede Soledad">
-            <div class="card-footer text-center fw-bold bg-dark text-white">
-              Sede – Soledad →
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-6">
-          <div class="card sede-card">
-            <img src="../assets/imagenes/sede-Baq.png" class="card-img-top" alt="Sede Barranquilla">
-            <div class="card-footer text-center fw-bold bg-dark text-white">
-              Sede – Barranquilla →
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-6">
-          <div class="card sede-card">
-            <img src="../assets/imagenes/sede-post.png" class="card-img-top" alt="Sede Posgrados">
-            <div class="card-footer text-center fw-bold bg-dark text-white">
-              Sede – Posgrados →
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-6">
-          <div class="card sede-card">
-            <img src="../assets/imagenes/sede-cols.png" class="card-img-top" alt="Sede Colsapiro">
-            <div class="card-footer text-center fw-bold bg-dark text-white">
-              Sede – Colsapiro →
-            </div>
-
           </div>
         </div>
       </div>
@@ -209,6 +216,22 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Mobile Floating Action Buttons -->
+    <div class="mobile-fab-container d-lg-none">
+        <button class="mobile-fab-btn" id="mobile-fab-reserve" data-bs-toggle="modal" data-bs-target="#roomDetailsModal">
+            <i class="fa-solid fa-calendar-plus"></i>
+            <span>Reservar</span>
+        </button>
+        <button class="mobile-fab-btn" id="mobile-fab-locate">
+            <i class="fa-solid fa-location-crosshairs"></i>
+            <span>Ubicación</span>
+        </button>
+        <button class="mobile-fab-btn" id="mobile-fab-filter">
+            <i class="fa-solid fa-filter"></i>
+            <span>Filtrar</span>
+        </button>
     </div>
 
 
