@@ -10,7 +10,7 @@ let polygons = {}; // Objeto para almacenar capas de polígonos Leaflet por sede
 let markers = {}; // Objeto para almacenar capas de marcadores Leaflet por sede
 let currentActiveMap = null; // Referencia al mapa Leaflet actualmente visible
 let currentActiveSedeId = null; // ID de la sede actualmente activa
-let currentUserRole = 'student'; // Rol por defecto del usuario
+let currentUserRole = 'admin'; // Rol por defecto del usuario
 
 // Capas base de Leaflet
 const baseLayers = {
