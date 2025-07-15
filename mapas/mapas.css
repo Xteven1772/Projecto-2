@@ -1,0 +1,585 @@
+/* Base Styles */
+body {
+  margin: 0;
+<<<<<<< HEAD
+  font-family: 'Inter', Arial, sans-serif; /* Usar Inter como fuente principal */
+  background-color: #f8f9fa; /* Fondo general muy claro */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #333333; /* Color de texto general */
+=======
+  padding: 0;
+  min-height: 100vh;
+>>>>>>> 7d6bf90a64d481bdda9a3a9c5b84a65587fedb85
+}
+
+/* Header (Navbar) Styles */
+.navbar {
+  background-color: #1e1b3a !important; /* Azul oscuro principal */
+  color: white;
+  padding: 1rem 2.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra sutil */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.navbar-logo {
+  height: 60px; /* Tamaño del logo */
+  margin-right: 1.5rem;
+}
+
+.navbar-title {
+  font-family: 'Montserrat', sans-serif; /* Montserrat para el título */
+  font-size: 1.8rem;
+  font-weight: 700; /* Más audaz */
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Search Bar Styles */
+.search-container {
+  position: relative;
+<<<<<<< HEAD
+  width: 300px; /* Ancho de la barra de búsqueda */
+}
+
+.search-input {
+  border-radius: 25px;
+  padding-left: 40px; /* Espacio para el icono */
+  border: 1px solid #b3cbea;
+  background-color: #f0f2f5;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #FFC107; /* Borde amarillo al enfocar */
+  box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+  background-color: #ffffff;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+}
+
+.user-menu-btn {
+  background-color: #FFC107; /* Amarillo de acento */
+  border-color: #FFC107;
+  color: #1e1b3a; /* Texto oscuro en botón amarillo */
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 25px; /* Más redondeado */
+  transition: all 0.3s ease;
+}
+
+.user-menu-btn:hover {
+  background-color: #e0a800; /* Amarillo más oscuro al pasar el ratón */
+  border-color: #e0a800;
+  color: #1e1b3a;
+  transform: translateY(-1px); /* Efecto de elevación */
+}
+
+.dropdown-menu {
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.dropdown-item-text {
+  color: #555;
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+}
+
+.logout-link {
+  color: #dc3545; /* Rojo para cerrar sesión */
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.logout-link:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Main Content Wrapper */
+.main-content-wrapper {
+  display: flex;
+  flex: 1;
+  padding: 30px; /* Más padding general */
+  gap: 30px; /* Más espacio entre sidebar y contenido */
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 350px; /* Ancho del sidebar */
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 25px;
+  border-radius: 12px; /* Bordes más redondeados */
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Sombra más pronunciada */
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.sidebar-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1e1b3a; /* Azul oscuro */
+  margin-bottom: 25px;
+  border-bottom: 2px solid #FFC107; /* Línea de acento amarilla */
+  padding-bottom: 10px;
+}
+
+.no-details-msg {
+  color: #6c757d; /* Gris para mensajes */
+  font-style: italic;
+  padding-top: 20px;
+}
+
+/* Filter Section */
+.filter-section {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.filter-label {
+  font-weight: 600;
+  color: #1e1b3a;
+  margin-bottom: 8px;
+}
+
+.filter-select {
+  border-radius: 8px;
+  border-color: #b3cbea;
+  background-color: #f0f2f5;
+  transition: all 0.3s ease;
+}
+
+.filter-select:focus {
+  border-color: #FFC107;
+  box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+}
+
+
+/* Content Area Styles */
+.content-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Para posicionar el botón de ubicación */
+}
+
+.page-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem; /* Título de página grande */
+  font-weight: 800;
+  color: #1e1b3a;
+  margin-bottom: 30px;
+  text-transform: uppercase; /* Mayúsculas */
+  letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+/* Map Container Styles */
+.map-container {
+  height: 700px; /* Altura del mapa */
+  width: 100%;
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12); /* Sombra más fuerte para el mapa */
+}
+
+/* Leaflet Custom Icon for Markers */
+.custom-div-icon {
+  background-color: transparent;
+  border: none;
+}
+
+/* "Mi Ubicación" Button */
+.locate-me-btn {
+  position: absolute;
+  bottom: 20px; /* Ajusta la posición */
+  right: 20px; /* Ajusta la posición */
+  background-color: #1e1b3a; /* Azul oscuro */
+  border-color: #1e1b3a;
+  color: white;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  z-index: 800; /* Asegura que esté sobre el mapa */
+}
+
+.locate-me-btn:hover {
+  background-color: #FFC107; /* Amarillo al pasar el ratón */
+  border-color: #FFC107;
+  color: #1e1b3a; /* Texto oscuro */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+
+/* Tab Navigation Styles */
+.nav-tabs {
+  border-bottom: 2px solid #dee2e6;
+  margin-bottom: 25px !important; /* Más espacio debajo de las pestañas */
+}
+
+.nav-tabs .nav-link {
+  color: #6c757d; /* Gris para pestañas inactivas */
+  border: none; /* Sin borde por defecto */
+  border-bottom: 3px solid transparent; /* Borde inferior para animación */
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover {
+  color: #1e1b3a; /* Azul oscuro al pasar el ratón */
+  border-bottom-color: #b3cbea; /* Azul claro al pasar el ratón */
+  background-color: #f0f2f5; /* Fondo muy suave */
+}
+
+.nav-tabs .nav-link.active {
+  color: #1e1b3a; /* Azul oscuro para pestaña activa */
+  background-color: #ffffff;
+  border-color: transparent;
+  border-bottom: 3px solid #FFC107; /* Borde inferior amarillo para activa */
+  font-weight: 700;
+}
+
+/* Dashboard Item Styles */
+.block-item, .floor-item, .room-item {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05); /* Sombra suave */
+  padding: 15px 20px; /* Más padding */
+  margin-bottom: 12px; /* Más espacio entre elementos */
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  position: relative; /* Para el icono de flecha */
+}
+
+.block-item:hover, .floor-item:hover, .room-item:hover {
+  background-color: #f0f2f5; /* Fondo más claro al pasar el ratón */
+  border-color: #b3cbea; /* Borde azul claro al pasar el ratón */
+  transform: translateY(-3px); /* Efecto de elevación */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1); /* Sombra más pronunciada */
+}
+
+.block-item.active, .floor-item.active, .room-item.active {
+  background-color: #1e1b3a; /* Azul oscuro para activo */
+  color: white;
+  border-color: #1e1b3a;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.block-item strong, .floor-item {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.room-item span {
+  font-weight: 500;
+}
+
+/* Icono de flecha para expandir/contraer */
+.block-item::after, .floor-item::after {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f078"; /* fa-chevron-down */
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.3s ease;
+  color: #6c757d; /* Gris para el icono */
+}
+
+.block-item.active::after, .floor-item.active::after {
+  transform: translateY(-50%) rotate(180deg); /* Gira la flecha */
+  color: white; /* Blanco cuando está activo */
+}
+
+.room-details {
+  margin-top: 15px;
+  padding-left: 25px;
+  font-size: 0.9em;
+  color: #555;
+  border-top: 1px dashed #e0e0e0;
+  padding-top: 15px;
+  line-height: 1.6; /* Mejor legibilidad */
+}
+
+.room-details strong {
+  color: #1e1b3a; /* Azul oscuro para el título de equipos */
+}
+
+/* Modal Styles */
+.modal-content {
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+  background-color: #1e1b3a;
+  color: white;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom: none;
+}
+
+.modal-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+.modal-body {
+  padding: 30px;
+  line-height: 1.7;
+}
+
+.modal-body h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #1e1b3a;
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
+.modal-body ul {
+  padding-left: 20px;
+}
+
+.modal-body ul li {
+  margin-bottom: 5px;
+}
+
+.modal-footer {
+  border-top: none;
+  padding: 15px 30px;
+}
+
+.modal-footer .btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+
+/* Footer Styles */
+.footer {
+  background-color: #1e1b3a; /* Azul oscuro principal */
+  color: #e0e0e0; /* Gris claro para el texto del footer */
+  padding: 1.5rem 2rem;
+  font-size: 0.95rem;
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* Más espacio entre los elementos del footer */
+  border-top: 5px solid #FFC107; /* Línea de acento amarilla */
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1); /* Sombra superior */
+}
+
+.footer-item {
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.footer-item:hover {
+  color: white;
+}
+
+.footer-item i {
+  color: #FFC107; /* Iconos amarillos en el footer */
+  margin-right: 8px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .main-content-wrapper {
+    padding: 20px;
+    gap: 20px;
+  }
+  .sidebar {
+    width: 300px;
+  }
+  .page-title {
+    font-size: 2.5rem;
+  }
+  .map-container {
+    height: 600px;
+  }
+}
+
+@media (max-width: 992px) { /* Tabletas y pantallas pequeñas */
+  .main-content-wrapper {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Sombra más ligera en móvil */
+  }
+
+  .content-area {
+    padding-left: 0;
+  }
+
+  .page-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .map-container {
+    height: 450px;
+  }
+
+  .nav-tabs {
+    justify-content: flex-start !important; /* Alinear a la izquierda en móvil */
+    overflow-x: auto; /* Scroll horizontal si hay muchas pestañas */
+    flex-wrap: nowrap; /* Evitar que las pestañas se envuelvan */
+  }
+
+  .nav-tabs .nav-item {
+    flex-shrink: 0; /* Evitar que las pestañas se encojan */
+  }
+
+  .navbar-title {
+    font-size: 1.5rem;
+  }
+
+  .search-container {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 15px;
+  }
+
+  .locate-me-btn {
+    bottom: 15px;
+    right: 15px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) { /* Móviles */
+  .navbar {
+    padding: 0.8rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-brand {
+    margin-bottom: 10px;
+  }
+
+  .navbar-logo {
+    height: 45px;
+  }
+
+  .navbar-title {
+    font-size: 1.3rem;
+  }
+
+  .user-menu-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .dropdown-menu {
+    width: 100%;
+  }
+
+  .sidebar-title {
+    font-size: 1.5rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 15px;
+    padding: 1rem;
+  }
+}
+
+/* Nuevos estilos para el manejo de roles */
+.role-badge {
+  background-color: #b3cbea; /* Color de fondo para el badge */
+  color: #1e1b3a; /* Color de texto */
+  padding: 0.3rem 0.7rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: capitalize; /* Capitalizar la primera letra del rol */
+}
+
+.admin-only {
+  /* Estilos para elementos solo de admin, si es necesario */
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px dashed #e0e0e0;
+}
+
+#manageUsersModal .modal-body {
+  max-height: 60vh; /* Altura máxima para el cuerpo del modal */
+  overflow-y: auto; /* Scroll si el contenido es muy largo */
+}
+
+#user-list .list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+#user-list .list-group-item span {
+  font-weight: 500;
+}
+
+#user-list .list-group-item .badge {
+  min-width: 80px; /* Ancho mínimo para los badges de rol */
+  text-align: center;
+}
+
+/* Colores para los badges de rol */
+.badge-admin {
+  background-color: #dc3545; /* Rojo */
+  color: white;
+}
+.badge-professor {
+  background-color: #0d6efd; /* Azul */
+  color: white;
+}
+.badge-student {
+  background-color: #28a745; /* Verde */
+  color: white;
+}
+=======
+  bottom: 0;
+  left: 0;
+  margin-top: auto;
+}
+>>>>>>> 7d6bf90a64d481bdda9a3a9c5b84a65587fedb85

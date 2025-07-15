@@ -1,0 +1,19 @@
+{
+  "name": "mi-proyecto",
+  "version": "1.0.0",
+  "description": "Proyecto de gestión de roles con Firebase y Netlify",
+  "main": "index.js",
+  "scripts": {
+    "start": "netlify dev", // Para desarrollo local
+    "build": "echo 'No build step required for static site'"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.0.0" // Asegúrate de usar la versión más reciente
+  },
+  "devDependencies": {
+    "netlify-cli": "^6.0.0" // Para usar la CLI de Netlify
+  },
+  "engines": {
+    "node": ">=14.0.0" // Asegúrate de que tu versión de Node.js sea compatible
+  }
+}

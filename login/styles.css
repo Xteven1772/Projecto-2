@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+header {
+  background-color: #1e1b3a;
+  color: white;
+  padding: 1.5rem 2.5rem;
+  display: flex;
+  align-items: center;
+  height: 50px; /* altura mayor */
+}
+
+header img {
+  height: 70px; /* 25% más que antes (40px -> 50px) */
+  margin-right: 1.5rem;
+}
+
+header h1 {
+  font-size: 1.5rem; /* más grande pero aún profesional */
+  font-weight: 600;
+  font-display: center; /* centrado */
+  color: #ffffff;
+  margin: 0; 
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 130px);
+}
+
+.login-box {
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.login-form {
+  background-color: #b3cbea;
+  padding: 2rem;
+  width: 300px;
+  box-sizing: border-box;
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.login-form label {
+  font-weight: bold;
+  display: block;
+  margin-top: 1rem;
+}
+
+.login-form input[type="email"], .login-form input[type="password"] {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 20px;
+  border: none;
+  margin-top: 0.5rem;
+}
+
+.login-form button {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 20px;
+  background-color: #1e1b3a;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logo-box {
+  background-color: #1e1b3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 250px;
+}
+
+.logo-box img {
+  width: 120px;
+}
+
+footer {
+  background-color: rgba(28,35,58,255);
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 2rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px; /* altura del footer */
+  height: calc(100vh - 130px);
+  box-sizing: border-box;
+}
+
+.logo-box img {
+  width: 80%;
+  max-width: 180px;
+  height: auto;
+<<<<<<< HEAD
+}
+
+.error-message {
+  color: #dc3545; /* Rojo para errores */
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.oculto {
+  display: none;
+}
+=======
+}
+>>>>>>> 7d6bf90a64d481bdda9a3a9c5b84a65587fedb85

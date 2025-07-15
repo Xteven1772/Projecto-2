@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapas - Institución Universitaria de Barranquilla</title>
+
+    <!-- Google Fonts: Inter (para texto general) y Montserrat (para títulos) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="mapas.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container-fluid px-3">
+        <a class="navbar-brand d-flex align-items-center text-white" href="#">
+          <img src="../assets/imagenes/logo-test.png" alt="Logo uB" class="navbar-logo" />
+          <span class="navbar-title">Institución Universitaria de Barranquilla</span>
+        </a>
+
+        <!-- Search Bar -->
+        <div class="search-container ms-auto me-3">
+          <input type="text" id="global-search" class="form-control search-input" placeholder="Buscar salón, bloque..." aria-label="Buscar">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        </div>
+
+        <!-- User Role Dropdown Menu -->
+        <div class="dropdown">
+          <span class="role-badge me-2" id="role-indicator">Cargando...</span> <!-- Nuevo elemento para mostrar el rol -->
+          <button
+            class="btn btn-outline-light dropdown-toggle user-menu-btn"
+            type="button"
+            id="userMenuButton"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-user me-2"></i> <span id="user-display-name">Usuario</span> <!-- ID para el nombre de usuario -->
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenuButton">
+            <li><span class="dropdown-item-text"><i class="fa-solid fa-envelope me-2"></i><span id="user-email">Prueba@unibarranquilla.com</span></span></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item logout-link" href="/login/login.html"><i class="fa-solid fa-right-from-bracket me-2"></i>Cerrar sesión</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<<<<<<< HEAD
+    <div class="main-content-wrapper">
+      <!-- Dashboard Lateral Izquierdo -->
+      <div class="sidebar" id="sidebar">
+        <h4 class="sidebar-title text-center mb-4">Detalles de la Sede</h4>
+
+        <!-- Admin Controls - Visible solo para administradores -->
+        <div id="admin-controls" class="admin-only mb-3" style="display: none;">
+          <button class="btn btn-sm btn-warning" id="manage-users-btn">
+            <i class="fas fa-users-cog me-1"></i> Gestionar Usuarios
+          </button>
+        </div>
+
+        <!-- Filters -->
+        <div class="filter-section mb-4">
+          <label for="room-type-filter" class="form-label filter-label"><i class="fa-solid fa-filter me-2"></i>Filtrar por Tipo:</label>
+          <select id="room-type-filter" class="form-select filter-select">
+            <option value="">Todos</option>
+            <option value="Clase">Aula de Clase</option>
+            <option value="Laboratorio">Laboratorio</option>
+            <option value="Auditorio">Auditorio</option>
+            <option value="Biblioteca">Biblioteca</option>
+            <option value="Administrativo">Administrativo</option>
+            <option value="Conferencias">Sala de Conferencias</option>
+          </select>
+        </div>
+
+        <div id="sede-details">
+          <!-- Aquí se cargarán dinámicamente los bloques, pisos y salones -->
+          <p class="text-center text-muted no-details-msg"><i class="fa-solid fa-map-marker-alt me-2"></i>Selecciona una sede para ver sus detalles.</p>
+        </div>
+      </div>
+
+      <!-- Contenido Principal (Mapas y Pestañas) -->
+      <div class="content-area">
+        <h1 class="page-title text-center mb-4">MAPAS DE SEDES</h1>
+
+        <!-- Pestañas de Navegación para Sedes -->
+        <ul class="nav nav-tabs justify-content-center mb-4" id="sedeTabs" role="tablist">
+          <!-- Las pestañas se generarán dinámicamente con JS -->
+        </ul>
+
+        <!-- Contenido de las Pestañas (Mapas) -->
+        <div class="tab-content" id="sedeTabContent">
+          <!-- Los contenedores de mapa se generarán dinámicamente con JS -->
+        </div>
+
+        <!-- "Mi Ubicación" Button -->
+        <button id="locate-me-btn" class="btn btn-primary locate-me-btn">
+          <i class="fa-solid fa-location-crosshairs me-2"></i> Mi Ubicación
+        </button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-item"><i class="fa-solid fa-envelope me-2"></i>soporte@unibarranquilla.edu.co</div>
+      <div class="footer-item"><i class="fa-solid fa-circle-question me-2"></i>ayuda</div>
+      <div class="footer-item"><i class="fa-solid fa-info-circle me-2"></i>preguntas frecuentes</div>
+    </footer>
+
+    <!-- Modal para Detalles del Salón -->
+    <div class="modal fade" id="roomDetailsModal" tabindex="-1" aria-labelledby="roomDetailsModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="roomDetailsModalLabel">Detalles del Salón</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="roomDetailsModalBody">
+            <!-- Contenido del salón se cargará aquí -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+=======
+    <div class="container my-4">
+      <h1 class="text-center mb-3">MAPAS</h1>
+      <div class="row g-3">
+        <div class="col-12 col-md-6 col-lg-6">
+          <div class="card sede-card">
+            <img src="../assets/imagenes/sede-soledad.jpg" class="card-img-top" alt="Sede Soledad">
+            <div class="card-footer text-center fw-bold bg-dark text-white">
+              Sede – Soledad →
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-6">
+          <div class="card sede-card">
+            <img src="../assets/imagenes/sede-Baq.png" class="card-img-top" alt="Sede Barranquilla">
+            <div class="card-footer text-center fw-bold bg-dark text-white">
+              Sede – Barranquilla →
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-6">
+          <div class="card sede-card">
+            <img src="../assets/imagenes/sede-post.png" class="card-img-top" alt="Sede Posgrados">
+            <div class="card-footer text-center fw-bold bg-dark text-white">
+              Sede – Posgrados →
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-6">
+          <div class="card sede-card">
+            <img src="../assets/imagenes/sede-cols.png" class="card-img-top" alt="Sede Colsapiro">
+            <div class="card-footer text-center fw-bold bg-dark text-white">
+              Sede – Colsapiro →
+            </div>
+>>>>>>> 7d6bf90a64d481bdda9a3a9c5b84a65587fedb85
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para Gestionar Usuarios (Solo Admin) -->
+    <div class="modal fade" id="manageUsersModal" tabindex="-1" aria-labelledby="manageUsersModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="manageUsersModalLabel">Gestionar Usuarios y Roles</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="user-email-input" class="form-label">Correo del Usuario:</label>
+              <input type="email" class="form-control" id="user-email-input" placeholder="ejemplo@unibarranquilla.edu.co">
+            </div>
+            <div class="mb-3">
+              <label for="user-role-select" class="form-label">Asignar Rol:</label>
+              <select class="form-select" id="user-role-select">
+                <option value="student">Estudiante</option>
+                <option value="professor">Profesor</option>
+                <option value="admin">Administrador</option>
+              </select>
+            </div>
+            <button type="button" class="btn btn-primary" id="assign-role-btn">Asignar Rol</button>
+            <p id="role-assignment-message" class="mt-3"></p>
+
+            <hr>
+            <h6>Usuarios Existentes:</h6>
+            <ul id="user-list" class="list-group">
+              <!-- Los usuarios se cargarán aquí -->
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Leaflet JS - HASH ACTUALIZADO -->
+   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+   <script type="module" src="mapas.js"></script>
+   
+  </body>
+</html>

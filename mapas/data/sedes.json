@@ -1,0 +1,104 @@
+[
+  {
+    "id": "soledad",
+    "nombre": "Sede Soledad",
+    "coordenadas_centro": { "lat": 10.935267781303175, "lng": -74.7660344836186 },
+    "zoom": 17,
+    "marcadores": [
+      {
+        "id": "soledad-entrada-principal",
+        "nombre": "Entrada Principal",
+        "coordenadas": { "lat": 10.935267781303175, "lng": -74.7660344836186 },
+        "icono": "fa-solid fa-door-open",
+        "popup_html": "<h5>Entrada Principal Sede Soledad</h5><p>¡Bienvenido a la Institución Universitaria de Barranquilla!</p>"
+      }
+    ],
+    "bloques": [
+      {
+        "id": "soledad-bloque-a",
+        "nombre": "Bloque A",
+        "poligono": [
+          [10.9355, -74.7662],
+          [10.9355, -74.7658],
+          [10.9348, -74.7658],
+          [10.9348, -74.7662]
+        ],
+        "pisos": [
+          {
+            "numero": 1,
+            "salones": [
+              { "id": "sola-a-101", "nombre": "Aula 101", "tipo": "Clase", "capacidad": 30, "equipos": ["Proyector", "Pizarra interactiva"] },
+              { "id": "sola-a-102", "nombre": "Laboratorio de Cómputo 1", "tipo": "Laboratorio", "capacidad": 25, "equipos": ["PC x 25", "Impresora láser"] }
+            ]
+          },
+          {
+            "numero": 2,
+            "salones": [
+              { "id": "sola-a-201", "nombre": "Aula 201", "tipo": "Clase", "capacidad": 35, "equipos": ["Proyector"] },
+              { "id": "sola-a-202", "nombre": "Sala de Conferencias", "tipo": "Conferencias", "capacidad": 50, "equipos": ["Sistema de sonido", "Micrófonos", "Pantalla gigante"] }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "soledad-bloque-b",
+        "nombre": "Bloque B",
+        "poligono": [
+          [10.9345, -74.7665],
+          [10.9345, -74.7661],
+          [10.9338, -74.7661],
+          [10.9338, -74.7665]
+        ],
+        "pisos": [
+          {
+            "numero": 1,
+            "salones": [
+              { "id": "sola-b-101", "nombre": "Biblioteca", "tipo": "Biblioteca", "capacidad": 100, "equipos": ["Computadoras de consulta", "Impresoras"] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "barranquilla",
+    "nombre": "Sede Barranquilla",
+    "coordenadas_centro": { "lat": 10.9850, "lng": -74.8000 },
+    "zoom": 16,
+    "bloques": [
+      {
+        "id": "baq-bloque-principal",
+        "nombre": "Edificio Principal",
+        "poligono": [
+          [10.9855, -74.8002],
+          [10.9855, -74.7998],
+          [10.9848, -74.7998],
+          [10.9848, -74.8002]
+        ],
+        "pisos": [
+          {
+            "numero": 1,
+            "salones": [
+              { "id": "baq-p-101", "nombre": "Recepción", "tipo": "Administrativo", "capacidad": 0, "equipos": [] },
+              { "id": "baq-p-102", "nombre": "Auditorio", "tipo": "Auditorio", "capacidad": 200, "equipos": ["Sistema de sonido", "Proyector 4K"] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "posgrados",
+    "nombre": "Sede Posgrados",
+    "coordenadas_centro": { "lat": 10.9900, "lng": -74.7950 },
+    "zoom": 17,
+    "bloques": []
+  },
+  {
+    "id": "colsapiro",
+    "nombre": "Sede Colsapiro",
+    "coordenadas_centro": { "lat": 10.9700, "lng": -74.7700 },
+    "zoom": 16,
+    "bloques": []
+  }
+]
